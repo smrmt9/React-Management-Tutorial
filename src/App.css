@@ -1,0 +1,7 @@
+.gray-background{
+  background-color: darkgray;
+}
+
+.gray-background >h2 {
+  text-align: center
+}
