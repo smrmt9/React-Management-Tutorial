@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Customer from './components/Customer';
 import CustomerAdd from './components/CustomerAdd';
 import './App.css';
@@ -95,11 +95,12 @@ stateRefresh = () =>{
                 <TableCell>생년월일</TableCell>
                 <TableCell>셩벌</TableCell>
                 <TableCell>직업</TableCell>
+                <TableCell>삭제</TableCell>
               </TableRow>
             </TableHead>
             <TableBody> 
               {this.state.customers ? this.state.customers.map(c => { 
-                return ( <Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job}  /> ) 
+                return <Customer stateRefresh={this.stateRefresh} key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job} />
               }): 
               <TableRow>
                 <TableCell colspan="6" align="center">
