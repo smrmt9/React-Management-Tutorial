@@ -20,6 +20,7 @@ class CustomerAdd extends React.Component{
         this.addCustomer()
             .then((response) => {
                 console.log(response.data);
+                this.props.stateRefresh(); //전체 리프레시가 아니라 부분 리프레시
             })
             this.setState({
                 file : null,
@@ -29,12 +30,12 @@ class CustomerAdd extends React.Component{
                 job : '',
                 fileName : ''
             })
-            window.location.reload();
+            
     }
 
     handleFileChange = (e) =>{
         this.setState({
-            file : e.target.Files[0],
+            file : e.target.files[0],
             fileName : e.target.value
         })
     }
